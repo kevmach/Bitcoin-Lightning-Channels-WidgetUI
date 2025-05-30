@@ -52,11 +52,6 @@ public class UiTests {
     Assertions.assertTrue(onChainText.startsWith("bc1"), "Bitcoin address not displayed!");
 
 
-        // Switch to on-chain tab
-        //createChannelPage.clickOnChainTab();
-        //WebElement onChainElement = wait.until( ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".payment-request-middle-value")));
-        //Assertions.assertTrue(onChainElement.getText().contains("Bitcoin Address"), "Bitcoin address not displayed!");
-
         browser.quit();
 
     }
