@@ -40,17 +40,7 @@ public class UiTests {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[1]/div/div/div/div[2]/div[3]/button")));
         createChannelPage.clickPayButton();
 
-         // Assert Lightning invoice is shown
-        //Thread.sleep(5000);
-        //WebElement lightningElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("custom-tabs-heading")));
-        //lightningElement.click();
-        //Assertions.assertTrue(lightningElement.getText().contains("Lightning"), "Lightning is not displayed");
-
-        //WebElement lightningInvoice = wait.until(
-        //ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.custom-tab:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(1)")));
-//String lightningText = lightningInvoice.getText();
-//System.out.println("Lightning Invoice Text: " + lightningText);
-//Assertions.assertTrue(lightningText.startsWith("lnbc"), "Lightning invoice not displayed!");
+    
 
     // Switch to on-chain and assert BTC address
         WebElement onchainoption=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.custom-tabs-heading-container:nth-child(2) > span:nth-child(2)")));
