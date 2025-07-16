@@ -7,13 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-public class SettingsPage {
-    WebDriver browser;
-    WebDriverWait wait;
+public class SettingsPage extends BasePage {
     public SettingsPage(WebDriver browserDriver) {
-        this.browser = browserDriver;
-        this.wait = new WebDriverWait(browser, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/div[1]/h4")));
-           wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[1]/div/div/div/div[2]/div/div[1]/div[2]/div[1]")));
+        super(browserDriver);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[1]/div/div/div/div[2]/div/div[1]/div[2]/div[1]")));
+    }
 
 }

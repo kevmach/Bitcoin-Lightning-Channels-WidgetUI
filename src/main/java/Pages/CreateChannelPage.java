@@ -9,14 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CreateChannelPage {
-    WebDriver browser;
-    WebDriverWait wait;
+public class CreateChannelPage extends BasePage {
+
 
     public CreateChannelPage(WebDriver browserDriver) {
-        this.browser = browserDriver;
-        this.wait = new WebDriverWait(browser, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/div[1]/h4")));
+       super(browserDriver);
     }
 
     public void setSats(String number) {

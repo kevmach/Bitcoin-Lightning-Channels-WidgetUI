@@ -9,14 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class MyOrderPage {
-    WebDriver browser;
-    WebDriverWait wait;
+public class MyOrderPage extends BasePage{
 
     public MyOrderPage(WebDriver browserDriver) {
-        this.browser = browserDriver;
-        this.wait = new WebDriverWait(browser, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div/div[1]/h4")));
+        super(browserDriver);
     }
 
         //Navigate to MyOrders Option in the Hamburger Menu
