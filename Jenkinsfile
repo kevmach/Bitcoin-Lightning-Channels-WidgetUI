@@ -2,8 +2,11 @@ pipeline {
   agent any
 
   tools {
-    jdk 'jdk17'
-    maven 'Maven 3.8.8'
+    tools {
+    jdk 'jdk17'               // This must match an installed JDK name (see next option)
+    maven 'Maven 3.9.9'       // Use this if it's already installed
+}
+
   }
 
   stages {
