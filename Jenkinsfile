@@ -2,8 +2,8 @@ pipeline {
   agent any
 
   tools {
-    jdk 'jdk17'               // Must match a JDK name in Jenkins Global Tool Config
-    maven 'Maven 3.9.9'       // Must match a Maven name in Jenkins Global Tool Config
+    jdk 'jdk17'               // Make sure this matches your Jenkins JDK config name
+    maven 'Maven 3.9.9'       // Make sure this matches your Jenkins Maven config name
   }
 
   stages {
@@ -15,20 +15,20 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'mvn clean install'
+        bat 'mvn clean install'
       }
     }
 
     stage('Test') {
       steps {
-        sh 'mvn test'
+        bat 'mvn test'
       }
     }
   }
 
   post {
     always {
-      junit '**/target/surefire-reports/*.xml'
+      junit '**\\target\\surefire-reports\\*.xml'
     }
   }
 }
