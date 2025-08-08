@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,8 +15,11 @@ import java.time.Duration;
 public class UiTests {
     @Test
     public void ChannelCreationTests() throws InterruptedException {
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+
         //Initialisation
-        WebDriver browser = new FirefoxDriver();
+        WebDriver browser = new FirefoxDriver(options);
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
 
 
