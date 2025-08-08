@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    environment {
+        GIT_SSL_NO_VERIFY = 'true'   // bypass SSL verification for git
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/kevmach/Bitcoin-Lightning-Channels-WidgetUI.git'
+            }
+        }
+
+        stage('Build & Test') {
+            steps {
+                sh 'mvn clean test -B'
+            }
+        }
+    }
+
+    post {
+        always {
+            junit '**/target/surefire-reports/*.xml'
+        }
+    }
+}

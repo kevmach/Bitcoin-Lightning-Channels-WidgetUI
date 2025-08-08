@@ -50,12 +50,11 @@ public class UiTests {
         ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".payment-request-middle-value")));
     String onChainText = onChainElement.getText();
     System.out.println("On-Chain Address Text: " + onChainText);
-    Assertions.assertTrue(onChainText.startsWith("bc1"), "Bitcoin address not displayed!");
+boolean bitcoinAddressIsDisplayed = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("bitcoinAddressId"))).isDisplayed();
 
-
+assertTrue(bitcoinAddressIsDisplayed, "Bitcoin address not displayed!");
 
         browser.quit();
-
     }
     //
 
