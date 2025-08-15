@@ -2,13 +2,17 @@ pipeline {
   agent any
 
   tools {
-    jdk 'jdk17'               // Make sure this matches your Jenkins JDK config name
-    maven 'Maven 3.9.9'       // Make sure this matches your Jenkins Maven config name
+    jdk 'jdk17'               // Matches your Jenkins JDK config name
+    maven 'Maven 3.9.9'       // Matches your Jenkins Maven config name
   }
 
   stages {
     stage('Checkout') {
       steps {
+        // Disable SSL verification for Git
+        bat 'git config --global http.sslVerify false'
+
+        // Now perform the checkout
         checkout scm
       }
     }
@@ -32,3 +36,4 @@ pipeline {
     }
   }
 }
+
