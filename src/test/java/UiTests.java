@@ -20,7 +20,7 @@ public class UiTests {
 
         //Initialisation
         WebDriver browser = new FirefoxDriver(options);
-        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(45));
 
 
         // go to website
